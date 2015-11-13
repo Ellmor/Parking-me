@@ -1,0 +1,41 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.content{
+    background-image: url("../images/background.jpg");
+    background-position: top left;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    min-height: 800px;
+    min-width: 480px;
+    padding-top: 20%;
+}
+
+#welcomeText{
+    margin: auto auto;
+    padding: 20px 10px 20px 10px;
+    width: 60vw; 
+    min-width: 200px;
+    text-align: center;
+    background-color: white;
+    opacity: 0.8;
+    vertical-align: middle;
+}
+#welcomeText p:first-child{
+    
+}
+
+#companyName{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.green{
+    color: green;
+    font-size:2.2em;
+}
