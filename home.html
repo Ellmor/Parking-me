@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking.me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <ul class="headerMenu">
+            <li>
+                <a><img id="btnMenu" src="./images/btnMenu.png"></a>
+            </li>
+            <li><p id="companyName"> Parking<span class="green">.</span>me</p></li>
+        </ul>
+    </header>
+    <section class="content">
+        <div id="map"></div>
+    </section>
+    <footer>
+        <p>This is footer</p>
+    </footer>
+    <!-- removed &callback=initMap" I want to control when the script is executed -->
+    <!-- apparently async defer can improve the performance by not holding html parsing when the external js is downloaded defer makes the script execute after html parsing not during -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUAzJcSAiOihGuhxZQyDYR4xjlKxqPpQs">
+    </script>
+    <script type="text/javascript" src="js/home.js"></script>
+</body>
+
+</html>
