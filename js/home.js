@@ -42,6 +42,16 @@ function getLocation() {
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             createAlert("Location found.", null, "alert-success");
+
+            //Start Watcher
+            var watchID = navigator.geolocation.watchPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                map.setCenter(pos);
+            });
+
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
