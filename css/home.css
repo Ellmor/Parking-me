@@ -1,5 +1,6 @@
 header {
     height: 64px;
+    max-height: 64px;
     background-color: blue;
     color: white;
 }
@@ -36,8 +37,17 @@ header {
     height: 100%;
 }
 
+.alert{
+    margin-bottom: 0px !important;
+    position: absolute;
+    bottom: 64px;
+    left:0px;
+    right: 0px;
+}
+
 footer {
     height: 64px;
+    max-height: 64px;
     background-color: blue;
     text-align: center;
 }

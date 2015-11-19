@@ -10,7 +10,7 @@ function initMap() {
         center: myLatLng,
         zoom: 15
     });
-    var infoWindow = new google.maps.InfoWindow({
+    infoWindow = new google.maps.InfoWindow({
         map: map
     });
 }
@@ -38,10 +38,10 @@ function getLocation() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
+            map.setCenter(pos);
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
-            map.setCenter(pos);
+            createAlert("Location found.", null, "alert-success");
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -54,8 +54,8 @@ function getLocation() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
+        createAlert("The Geolocation service failed.", "Error!", "alert-danger") :
+        createAlert("Your browser doesn\'t support geolocation.", "Error!", "alert-danger"));
 }
 
 function fixWindowHeight() {
@@ -63,8 +63,14 @@ function fixWindowHeight() {
     $(".content").height(sectionHeight);
 }
 
+function createAlert(message, title, type) {
+    $('#alertplaceholder').html('<div class="alert ' + type + '"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span>' + (title != null ? "<strong>" + title + "</strong>" : "") + message + '</span></div>');
+}
+
+
 (function() {
     var map = null;
+    var infoWindow = null;
     initMap();
     getLocation();
     // Fix window height
@@ -72,4 +78,8 @@ function fixWindowHeight() {
     $(window).resize(function() {
         fixWindowHeight();
     })
+    var dialog = $(".close");
+    dialog.click(function() {
+        dialog.parent().alert("close");
+    });
 })();
