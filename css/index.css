@@ -1,9 +1,22 @@
-body {
+body {}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     background-image: url("../images/background.jpg");
     background-position: top left;
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-color: #cccccc;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    z-index: -1;
 }
 
 .content {
@@ -11,55 +24,46 @@ body {
     height: 100%;
 }
 
-#welcomeText {
-    border-radius: 10px;
-    margin-bottom: 20%;
+#textbox {
+    /*border: 1px solid red;*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
     padding: 10px 10px 20px 10px;
-    width: 60%;
-    min-width: 200px;
     text-align: center;
-    /*background-color: rgba(197, 24, 50, 0.8);*/
-    vertical-align: middle;
 }
 
-#welcomeText p {
+#textbox p {
+    /*border: 1px solid blue;*/
     text-align: center;
     color: white;
-    text-shadow:
-    -1px -1px 0 #FFF,
-    1px -1px 0 #FFF,
-    -1px 1px 0 #FFF,
-    1px 1px 0 #FFF;      
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
     color: #003297;
-    font-size: 3.2em;
+    font-size: 2.6em;
 }
 
 #companyName {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 2em;
 }
 
 .green {
     color: green;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
 .btn {
-  background: #003297;
-  -webkit-border-radius: 6;
-  -moz-border-radius: 6;
-  border-radius: 6px;
-  border: 1px solid white;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+    background: #003297;
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    border: 1px solid white;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
 }
+
 .btn:hover {
     background: #002F8C;
 }

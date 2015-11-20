@@ -1,8 +1,8 @@
 function initMap() {
     geocoder = new google.maps.Geocoder();
     var myLatLng = {
-        lat: -25.363,
-        lng: 131.044
+        lat: 56.160249,
+        lng: 10.208312
     };
 
     // Create a map object and specify the DOM element for display.
@@ -50,6 +50,7 @@ function getLocation() {
                     lng: position.coords.longitude
                 };
                 map.setCenter(pos);
+                console.log("Position updated");
             });
 
         }, function() {
