@@ -20,7 +20,7 @@
     <header>
         <ul class="headerMenu">
             <li>
-                <a><img id="btnMenu" src="./images/btnMenu.png"></a>
+                <img id="btnMenu" src="./images/btnMenu.png" />
             </li>
             <li>
                 <p id="companyName"> Parking<span class="green">.</span>me</p>
@@ -30,14 +30,21 @@
     <section class="content">
         <div id="map"></div>
         <div id="alertplaceholder">
-            
         </div>
     </section>
     <footer>
         <p>This is footer</p>
     </footer>
+    <div id="menuWrapper">
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </div>
     <!-- removed &callback=initMap" I want to control when the script is executed -->
-    <!-- apparently async defer can improve the performance by not holding html parsing when the external js is downloaded defer makes the script execute after html parsing not during -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUAzJcSAiOihGuhxZQyDYR4xjlKxqPpQs">
     </script>
     <script type="text/javascript" src="js/home.js"></script>

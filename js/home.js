@@ -93,4 +93,16 @@ function createAlert(message, title, type) {
     dialog.click(function() {
         dialog.parent().alert("close");
     });
+    var burger = $("#btnMenu");
+    burger.click(function() {
+        $("#menuWrapper").show();
+        // var e = document.getElementById("menu");
+        // if (e.style.display == 'block')
+        //     e.style.display = 'none';
+        // else
+        //     e.style.display = 'block';
+    });
+    $("#menuWrapper").click(function() {
+        $("#menuWrapper").hide();
+    });
 })();

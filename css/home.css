@@ -37,6 +37,33 @@ header {
     height: 100%;
 }
 
+#menuWrapper{
+    background-color: red;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#menu{
+    position: absolute;
+    left: 24px;
+    top: 24px;
+}
+#menu ul {
+    background-color: blue;
+    list-style: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0;
+}
+#menu li {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+}
+
 .alert{
     margin-bottom: 0px !important;
     position: absolute;
