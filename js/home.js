@@ -15,6 +15,19 @@ function initMap() {
     });
 }
 
+function getParkingInfo() {
+    var url = 'http://www.odaa.dk/api/action/datastore_search?resource_id=2a82a145-0195-4081-a13c-b0e587e9b89c';
+    $.getJSON(url, function(data) {
+        $.each(data.result.records, function(key, val) {
+            var parking = new google.maps.InfoWindow({
+                map: map
+            });
+            parking.setPosition(getLocationFromString(val.garageCode + " Arhus Danmark"));
+            parking.setContent("Free: " + (val.vehicleCount - val.totalSpaces));
+        });
+    });
+}
+
 
 function getLocationFromString(address) {
     geocoder.geocode({
@@ -22,9 +35,10 @@ function getLocationFromString(address) {
         },
         function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
+                //map.setCenter(results[0].geometry.location);
+                return results[0].geometry.location;
             } else {
-                //DO nothing
+                return null;
             }
         }
     );
@@ -83,6 +97,7 @@ function createAlert(message, title, type) {
     var map = null;
     var infoWindow = null;
     initMap();
+    getParkingInfo();
     getLocation();
     // Fix window height
     fixWindowHeight();
